@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.4.4
 
 # Based on https://github.com/tatsushid/docker-alpine-py3-tensorflow-jupyter/blob/master/Dockerfile
 # Changes:
@@ -47,7 +47,7 @@ RUN cd bazel-${BAZEL_VERSION} \
     && cp -p output/bazel /usr/bin/
 
 # Download Tensorflow
-ENV TENSORFLOW_VERSION 1.7.0
+ENV TENSORFLOW_VERSION 1.3.0
 RUN cd /tmp \
     && curl -SL https://github.com/tensorflow/tensorflow/archive/v${TENSORFLOW_VERSION}.tar.gz \
         | tar xzf -
